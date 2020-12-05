@@ -14,17 +14,20 @@ def cmd_output(cmd: str) -> str:
     Return:
         str: Candena con la salida del comando.
     """
-    output = subprocess.run(
-        cmd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.DEVNULL,
-        shell=True,
-        text=True,
-    )
-    if output.returncode == 0:
-        return output.stdout[:-1]
-    else:
-        return ""
+    try:
+        output = subprocess.run(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            shell=True,
+            text=True,
+        )
+        if output.returncode == 0:
+            return output.stdout[:-1]
+        else:
+            return ""
+    except TypeError:
+        raise TypeError("Tipo no valido")
 
 
 def execute(cmd: str) -> bool:
@@ -34,14 +37,17 @@ def execute(cmd: str) -> bool:
     Return:
         bool: Estado de ejecución del comando.
     """
-    output = subprocess.run(
-        cmd,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.DEVNULL,
-        shell=True,
-        text=True,
-    )
-    if output.returncode == 0:
-        return True
-    else:
-        return False
+    try:
+        output = subprocess.run(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            shell=True,
+            text=True,
+        )
+        if output.returncode == 0:
+            return True
+        else:
+            return False
+    except TypeError:
+        raise TypeError("Tipo no valido")
