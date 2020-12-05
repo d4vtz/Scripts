@@ -9,7 +9,7 @@
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
-        "--max-line-length=88"
+        "--max-line-length=79"
     ],
     // to enable sort imports on save
     "editor.codeActionsOnSave": {
