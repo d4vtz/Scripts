@@ -1,0 +1,25 @@
+{
+    "python.pythonPath": "/home/medicendav/.cache/pypoetry/virtualenvs/scripts-1QleiSlO-py3.9/bin/python3",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.linting.lintOnSave": true,
+    "python.linting.enabled": true,
+    // if using flake8 (uncomment below lines and comment above block of settings of pylint
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=88"
+    ],
+    // to enable sort imports on save
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    // to add environment vars while opening a new vscode terminal (name:val)
+    "terminal.integrated.env.linux": {
+        "DJANGO_ENV": "DEV"
+    },
+    "[python]": {
+        "editor.tabSize": 4
+    },
+}
