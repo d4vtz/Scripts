@@ -16,5 +16,18 @@ flakehell = "^0.7.1"
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
 [tool.flakehell]
 max_line_length = 88
+show-source = true
+format = "grouped"
+
+[tool.flakehell.plugins]
+# include everything in pyflakes except F401
+pyflakes = ["+*", "-F401"]
+flake8-bandit = ["-*", "+S1??"]
+"flake8-*" = ["+*"]
+flake8-docstrings = ["-*"]
