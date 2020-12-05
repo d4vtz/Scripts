@@ -8,9 +8,10 @@
     // if using flake8 (uncomment below lines and comment above block of settings of pylint
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=79"
-    ],
+    "python.linting.flake8Path": "/home/medicendav/.cache/pypoetry/virtualenvs/scripts-1QleiSlO-py3.9/bin/flake8helled",
+    // "python.linting.flake8Args": [
+    //     "--max-line-length=79"
+    // ],
     // to enable sort imports on save
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
@@ -22,4 +23,10 @@
     "[python]": {
         "editor.tabSize": 4
     },
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true,
 }
