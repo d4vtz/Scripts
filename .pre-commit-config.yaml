@@ -14,20 +14,36 @@ repos:
     hooks:
     - id: black
       language_version: python3.9
+      stages: [commit]
 
 -   repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.4
     hooks:
     - id: flake8
+      stages: [commit]
 
 -   repo: https://github.com/timothycrosley/isort
     rev: 5.4.2
     hooks:
       - id: isort
+        name: isort
         additional_dependencies: [toml]
         exclude: ^.*/?setup\.py$
+        stages: [commit]
 
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: ''  # Use the sha / tag you want to point at
+    rev: v0.790  # Use the sha / tag you want to point at
     hooks:
     -   id: mypy
+        name: mypy
+        stages: [commit]
+
+-   repo: local
+    hooks:
+    - id: pytest
+      name: pytest
+      language: system
+      entry: pytest
+      pass_filenames: false
+      always_run: true
+      stages: [commit]
