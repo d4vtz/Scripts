@@ -26,8 +26,9 @@ show-source = true
 format = "grouped"
 
 [tool.flakehell.plugins]
-# include everything in pyflakes except F401
-pyflakes = ["+*", "-F401"]
-flake8-bandit = ["-*", "+S1??"]
-"flake8-*" = ["+*"]
-flake8-docstrings = ["-*"]
+pyflakes = ["+*", "-E501"]
+flake8-blind-except = ["+*"]
+flake8-builtins = ["+*"]
+flake8-import-order-flake8-linter = ["+*"]
+mccabe = ["+*"]
+pycodestyle = ["+*"]
