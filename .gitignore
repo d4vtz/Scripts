@@ -1,3 +1,6 @@
 # Cache
-scripts/__pycache__/
+*/__pycache__/
+*/__pycache__/*
+scripts/procesos/__pycache__/
 tests/__pycache__/
+scripts/procesos/__pycache__/
