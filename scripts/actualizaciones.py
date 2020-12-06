@@ -1,4 +1,4 @@
-#!/home/medicendav/.cache/pypoetry/virtualenvs/scripts-1QleiSlO-py3.9/bin/python
+#!/usr/bin/env python
 """
 Autor: MedicenDav
 Dotfiles: github.com/medicendav/Dotfiles
