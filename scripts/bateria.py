@@ -4,6 +4,7 @@ import notify2
 from scripts.procesos.comandos import cmd_output
 
 CRITICAL_CHARGE = 20
+LEVEL = ["", "", "", "", "", ""]
 
 
 def notify_me(charge):
@@ -23,28 +24,32 @@ def notify_me(charge):
 
 
 class Battery:
+    @classmethod
+    def raw_info(cls):
+        return cmd_output("acpi -V").split("\n")
+
     def __init__(self):
-        state = cmd_output("acpi -V").split("\n")
-        self.charge = int(state[0].split()[3].split("%")[0])
-        self.state = state[2].split()[2]
+        self.charge = int(self.raw_info()[0].split()[3].split("%")[0])
+        self.state = self.raw_info()[2].split()[2]
 
     def level(self):
         if 80 <= self.charge < 100:
-            return ""
+            return LEVEL[0]
         elif 60 <= self.charge < 80:
-            return ""
+            return LEVEL[1]
         elif 40 <= self.charge < 60:
-            return ""
+            return LEVEL[2]
         elif 20 <= self.charge < 40:
-            return ""
+            return LEVEL[3]
         elif 0 <= self.charge < 20:
-            return ""
+            return LEVEL[4]
         else:
-            return ""
+            return LEVEL[5]
 
 
 if __name__ == "__main__":
     battery = Battery()
+
     if battery.state == "on-line":
         print(f"   {battery.charge}%")
     elif battery.state == "full":
