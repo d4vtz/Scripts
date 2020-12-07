@@ -40,7 +40,7 @@ def execute(cmd: str) -> bool:
     try:
         output = subprocess.run(
             cmd,
-            stdout=subprocess.PIPE,
+            stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             shell=True,
             text=True,
@@ -51,3 +51,20 @@ def execute(cmd: str) -> bool:
             return False
     except TypeError:
         raise TypeError("Tipo no valido")
+
+
+def list_proc(program: str) -> list:
+    """Función que retorna una lista con todos los procesos que
+    ejecuta un programa.
+    """
+    awk = "'{print $1}'"
+    return cmd_output(
+        f"ps ax | grep {program} | grep -v grep | awk  {awk}"
+    ).split("\n")
+
+
+def kill_proc(proc: str) -> bool:
+    """
+    Función que mata un proceso dado.
+    """
+    return execute(f"kill {proc}")
