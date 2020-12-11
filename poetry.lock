@@ -249,6 +249,17 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 dev = ["pre-commit", "tox"]
 
 [[package]]
+name = "pulsectl"
+version = "20.5.1"
+description = "Python high-level interface and ctypes-based bindings for PulseAudio (libpulse)"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+setuptools = "*"
+
+[[package]]
 name = "py"
 version = "1.9.0"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
@@ -404,7 +415,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.0"
 python-versions = "^3.9"
-content-hash = "bedad4138bb1626bcb07bd2bf643b1dca2814e155dad396b667cae6be6e4d834"
+content-hash = "af5861262b15edf80776f069521570d2337aaed476a354f81cb7320040aa622c"
 
 [metadata.files]
 appdirs = [
@@ -509,6 +520,10 @@ pathspec = [
 pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
     {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
+]
+pulsectl = [
+    {file = "pulsectl-20.5.1-py2.py3-none-any.whl", hash = "sha256:a2edf3a3c535bcc01cb89dc69665407e4be5cc3c2b4304e4a20fd2eb8c61392e"},
+    {file = "pulsectl-20.5.1.tar.gz", hash = "sha256:39b0a0e7974a7d6468d826a838822f78b00ac9c3803f0d7bfa9b1cad08ee22db"},
 ]
 py = [
     {file = "py-1.9.0-py2.py3-none-any.whl", hash = "sha256:366389d1db726cd2fcfc79732e75410e5fe4d31db13692115529d34069a043c2"},

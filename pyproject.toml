@@ -10,6 +10,7 @@ requests = "^2.25.0"
 beautifulsoup4 = "^4.9.3"
 notify2 = "^0.3.1"
 dbus-python = "^1.2.16"
+pulsectl = "^20.5.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
